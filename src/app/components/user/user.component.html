@@ -1,0 +1,19 @@
+<section>
+    <h1>Hello {{username}}, you are a {{occupation}} </h1>
+    @if(doesUserExist){
+        <p>Congratulatiosn! You do exist</p>
+    }@else {
+        <p>We're sorry, but we have bouds about your existense </p>
+    }
+    
+    <h2> He're your operating system</h2>
+    <ul>
+        @for(cities of operatingSystems; track cities.id){
+    <li (mouseover)="onMouseOver(cities.name)">{{ cities.name | uppercase}}</li>
+        }
+    </ul>
+    <div class="editable-div" [contentEditable]="isEditable"></div>
+    <button (click) = "emitToParent()">Message to parent!</button>
+</section>
+
+
